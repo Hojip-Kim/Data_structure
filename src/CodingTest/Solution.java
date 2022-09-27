@@ -1,32 +1,38 @@
 package CodingTest;
 
-import java.lang.reflect.Array;
+
 import java.util.ArrayList;
+import java.util.Stack;
+//문자열 뒤집기
 
-class Solution {
-    public String solution(String s) {
-        String answer = "";
+//입출력 예시
+//입력 : "Hello"
+//출력 : "OLLEH"
 
+//입력 : 1 3 5 7 9
+//출력 : 9 7 5 3 1
+public class Solution {
 
-        ArrayList<Integer> arr = new ArrayList<>();
-
-        for(int i = 0; i<s.length(); i++)
-        {
-            arr.add((int)s.charAt(i));
+        public static String reverseString(String str){
+            String answer = "";
+            Stack a = new Stack();
+            for (int i = 0; i < str.length(); i++) {
+                a.push(str.charAt(i));
+            }
+            int num = a.size();
+            for (int i = 0; i < num; i++) {
+               answer += a.pop();
+            }
+            return answer;
         }
 
-        System.out.println(arr);
-        return answer;
+        public static void main(String[] args) {
+            String result = reverseString("Hello");
+            System.out.println(result);
+
+            String result2 = reverseString("1 3 5 7 9");
+            System.out.println(result2);
+        }
     }
-}
-
-class Main {
-
-    public static void main(String[] args){
-        Solution a = new Solution();
 
 
-        System.out.println(a.solution("1 3 2 4 5"));
-
-    }
-}
