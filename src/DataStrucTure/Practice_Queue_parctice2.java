@@ -37,6 +37,7 @@ public class Practice_Queue_parctice2 {
             arr.add(queue.poll());
         }
         System.out.println(arr);
+        System.out.println(arr);
 
 
 
