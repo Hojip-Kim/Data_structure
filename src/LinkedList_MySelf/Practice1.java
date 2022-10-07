@@ -1,5 +1,8 @@
 package LinkedList_MySelf;
 
+import java.util.Queue;
+import java.util.Stack;
+
 class LinkedList2 extends LinkedList{
 
     LinkedList2(Node node){
