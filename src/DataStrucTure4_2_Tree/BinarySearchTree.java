@@ -4,7 +4,7 @@ package DataStrucTure4_2_Tree;
 import java.util.LinkedList;
 import java.util.Queue;
 
-class Node{
+ class Node{
     int key;
     Node left;
     Node right;
