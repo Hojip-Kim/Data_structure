@@ -6,7 +6,7 @@ class BinaryTree{
     BinaryTree(char[] data){
         this.arr = data.clone();
     }
-
+    //        [A, B, C, D, E, F, G, H, I, J]
     public void preOrder(int idx){
         System.out.print(this.arr[idx] + " ");
         int left = 2*idx+1;
@@ -18,6 +18,8 @@ class BinaryTree{
             this.preOrder(right);
         }
     }
+//idx = 0 {A, B, D, H, I, }
+
 
     public void inOrder(int idx){
         int left = 2* idx + 1;
@@ -62,6 +64,7 @@ public class Practice1 {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = (char)('A' + i);
         }
+
 
         BinaryTree bt = new BinaryTree(arr);
 
