@@ -105,11 +105,23 @@ public class BinarySearchTree {
                 successor = cur.left;
 
                 while(successor.right != null){
-                    predecessor = successor;
+                    predecessor = successor; // 여기서의 successor은 뒤의 successor보다 조금 작은값.
                     successor = successor.right;
                 }
 
-                predecessor.right = successor.left;
+                predecessor.right = successor.left; // 여기서의 successor은 가장 큰값임.(successor.right = null임, left는 가장큰값보다 조금작은값, 그러나 위의successor보단 큼(predessessor보단))
+                successor.left = cur.left;
+                successor.right = cur.right;
+
+                if(parent == null){
+                    this.head = successor;
+                }else{
+                    if(parent.left == cur){
+                        parent.left = successor;
+                    }else{
+                        parent.right = successor;
+                    }
+                }
 
         }
     }
@@ -131,4 +143,21 @@ public class BinarySearchTree {
         System.out.println();
     }
 
+}
+
+class Main{
+    public static void main(String[] args) {
+//        Test code
+//        노드 삽입
+        BinarySearchTree bst = new BinarySearchTree(20);
+        bst.addNode(10);
+        bst.addNode(30);
+        bst.addNode(1);
+        bst.addNode(15);
+        bst.addNode(25);
+        bst.addNode(13);
+        bst.addNode(35);
+        bst.addNode(27);
+        bst.addNode(40);
+    }
 }
