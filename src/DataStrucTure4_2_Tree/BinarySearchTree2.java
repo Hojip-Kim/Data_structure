@@ -30,7 +30,7 @@ class AVLTree{
 
         node.left = lNode.right;
         lNode.right = node;
-
+        return node;
     }
 
     public Node leftRotate(Node node){
