@@ -17,13 +17,19 @@ class Node2 extends Node{
 class AVLTree{
     Node head;
 
-    public int height(Node node){
-        return 0;
+    public int height(Node2 node){
 
+        if(node == null){
+            return -1;
+        }
+        return node.height;
     }
 
     public Node rightRotate(Node node){
-        return null;
+        Node lNode = node.left;
+
+        node.left = lNode.right;
+        lNode.right = node;
 
     }
 
